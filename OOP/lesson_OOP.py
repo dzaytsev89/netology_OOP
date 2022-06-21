@@ -25,8 +25,9 @@ class Student:
         return round(sum(all_avg_grade) / len(all_avg_grade), 1)
 
     def __str__(self):
-        return f'Имя: {self.name}' '\n'  f'Фамилия: {self.surname}' '\n' f'Средняя оценка за домашние задания: {self.avg_grade()}'\
-               '\n' f'Курсы в процессе изучения: {self.courses_in_progress}' '\n' f'Завершенные курсы: {self.finished_courses}'
+        finished_courses = self.finished_courses
+        return f'Имя: {self.name}' '\n' f'Фамилия: {self.surname}' '\n' f'Средняя оценка за домашние задания: {self.avg_grade()}'\
+               '\n' f'Курсы в процессе изучения: {", ".join(self.courses_in_progress)}' '\n' f'Завершенные курсы: {", ".join(self.finished_courses)}'
 
 class Mentor:
     def __init__(self, name, surname):
@@ -73,18 +74,18 @@ class Reviewer(Mentor):   # эксперты, проверяющие домаш�
 # best_student = Student('Ruoy', 'Eman', 'your_gender')
 # best_student.courses_in_progress += ['Python']
 #
-# some_reviewer = Reviewer('Some', 'Buddy')
-# some_reviewer.courses_attached += ['Python', 'Git']
-# print(some_reviewer)
-# some_lecturer = Lecturer('Some', 'Buddy')
-# some_lecturer.courses_attached += ['Python', 'Git']
-# some_lecturer.lecturer_grades = {'Python': [4, 1, 5], 'Git': [2,9,4]}
-# print(some_lecturer)
+some_reviewer = Reviewer('Some', 'Buddy')
+some_reviewer.courses_attached += ['Python', 'Git']
+print(some_reviewer)
+some_lecturer = Lecturer('Some', 'Buddy')
+some_lecturer.courses_attached += ['Python', 'Git']
+some_lecturer.lecturer_grades = {'Python': [4, 1, 5], 'Git': [2,9,4]}
+print(some_lecturer)
 
 some_student = Student('Ruoy', 'Eman', 'male')
 some_student.courses_in_progress += ['Python', 'Git']
-some_student.grades = {'Python': [4, 1, 5], 'Git': [2,9,4]}
-some_student.finished_courses = ['Java']
+some_student.grades = {'Python': [4, 1, 5], 'Git': [2, 9, 4]}
+some_student.finished_courses = ['Введение в программирование']
 print(some_student)
 
 # cool_mentor.rate_hw(best_student, 'Python', 10)
