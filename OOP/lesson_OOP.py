@@ -21,7 +21,7 @@ class Student:
         all_avg_grade = []
         for course, grades in self.grades.items():
             avg_grade = sum(grades) / len(grades)
-            print(course, round(avg_grade, 1))
+            #print(course, round(avg_grade, 1))
             all_avg_grade += [avg_grade]
         return round(sum(all_avg_grade) / len(all_avg_grade), 1)
 
