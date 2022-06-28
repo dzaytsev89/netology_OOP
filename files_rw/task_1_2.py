@@ -23,7 +23,8 @@ def file_reader(file_name):
 file_reader('recipes.txt')
 pprint(cook_book)
 
-#Task №2
+print('\n'* 2)
+print('Task №2')
 
 ingr_counter = {}
 
