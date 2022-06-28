@@ -2,6 +2,7 @@ import os
 from pprint import pprint
 cook_book = {}
 
+#Task №1
 def file_reader(file_name):
     base_path = os.getcwd()
     with open(file_name, encoding='utf-8') as f:
@@ -20,7 +21,10 @@ def file_reader(file_name):
             f.readline()
 
 file_reader('recipes.txt')
-# pprint(cook_book)
+pprint(cook_book)
+
+#Task №2
+
 ingr_counter = {}
 
 def ingr_maker(ingr, person_count):
@@ -50,16 +54,3 @@ def get_shop_list_by_dishes(dishes, person_count):
     return
 
 get_shop_list_by_dishes(['Запеченный картофель', 'Омлет'], 2)
-
-# get_shop_list_by_dishes(['Запеченный картофель', 'Омлет'], 2)
-# Должен быть следующий результат:
-#
-# {
-#   'Картофель': {'measure': 'кг', 'quantity': 2},
-#   'Молоко': {'measure': 'мл', 'quantity': 200},
-#   'Помидор': {'measure': 'шт', 'quantity': 4},
-#   'Сыр гауда': {'measure': 'г', 'quantity': 200},
-#   'Яйцо': {'measure': 'шт', 'quantity': 4},
-#   'Чеснок': {'measure': 'зубч', 'quantity': 6}
-# }
-# Обратите внимание, что ингредиенты могут повторяться
